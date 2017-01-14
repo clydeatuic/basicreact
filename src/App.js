@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -11,20 +10,23 @@ class App extends Component {
 
 
   render() {
+    const logoMargin = {
+      marginLeft: "10px"
+    };
+
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className="container">
+
+      <nav>
+        <div className="nav-wrapper">
+          <a href="#" className="brand-logo" style={logoMargin}>Game Of Thrones</a>
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <li><Link to="/" activeClassName="active">Home</Link></li>
+            <li><Link to="/about" activeClassName="active">About</Link></li>
+            <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+          </ul>
         </div>
-
-        {/*
-          <Content />
-        */}
-
-        <br/>
-
-        <Link to="/" activeClassName="active">Home</Link> | <Link to="/about" activeClassName="active">About</Link> | <Link to="/contact" activeClassName="active">Contact</Link>
+      </nav>
         
         {this.props.children}
 
